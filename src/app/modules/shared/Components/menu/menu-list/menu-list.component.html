@@ -1,0 +1,15 @@
+<a class="waves-effect waves-light btn #7b1fa2 purple darken-2"><i class="material-icons right">add</i>Add menu</a>
+<div class="menu-nav" *ngIf="menus && authLocalService.getPrincipal().role === authLocalService.roles.CUSTOMER">
+  <nav>
+    <div class="nav-wrapper nav__restaurant">
+      <ul class="hide-on-med-and-down nav__restaurant_list">
+        <li class="nav__restaurant_item" *ngFor="let menu of menus">
+          <a [routerLink]="[menu.id]" [routerLinkActive]="['active-link']">{{menu.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="list_container">
+  <app-menu-card class="card_item" *ngFor="let menu of menus" [menu] = menu></app-menu-card>
+</div>

@@ -1,0 +1,32 @@
+<div class="row" *ngIf="restaurant">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-image">
+        <img class="avatar" src="{{avatarHost}}/{{restaurant.id}}/{{restaurant.avatar}}">
+        <div class="description">
+          <h2 class="name">{{restaurant.name}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article__content">
+  <nav>
+    <div class="nav-wrapper nav__restaurant">
+      <ul class="hide-on-med-and-down nav__restaurant_list">
+        <li class="nav__restaurant_item"><a [routerLink]="['menu']" [routerLinkActive]="['active-link']">Menu</a></li>
+        <li class="nav__restaurant_item"><a [routerLink]="['tables']" [routerLinkActive]="['active-link']">Tables</a></li>
+        <li class="nav__restaurant_item"><a [routerLink]="['managers']" [routerLinkActive]="['active-link']">Managers</a>
+        <li class="nav__restaurant_item"><a [routerLink]="['waiters']" [routerLinkActive]="['active-link']">Waiters</a></li>
+        <li class="nav__restaurant_item"><a [routerLink]="['cooks']" [routerLinkActive]="['active-link']">Cooks</a></li>
+        <li class="nav__restaurant_item"><a [routerLink]="['info']" [queryParams]="restaurant" [routerLinkActive]="['active-link']">Info</a></li>
+        <li class="nav__restaurant_item"><a [routerLink]="['comments']" [routerLinkActive]="['active-link']">Comments</a></li>
+        <li class="nav__restaurant_item"><a [routerLink]="['reservation']" [routerLinkActive]="['active-link']">Reservation</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

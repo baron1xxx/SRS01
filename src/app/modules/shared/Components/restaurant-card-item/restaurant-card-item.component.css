@@ -1,0 +1,61 @@
+.card__box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2px;
+}
+
+.card-title {
+  margin: 2px;
+}
+
+.card-description {
+  margin: 2px;
+}
+
+.card-image {
+  height: 170px;
+  overflow: hidden;
+}
+
+.info {
+  width: 100%;
+  /*align-self: auto;*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.star-rating {
+  margin: 1px;
+  flex-basis: 0;
+  flex-grow: 2;
+}
+.distance {
+  margin: 1px;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.edit-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-edit {
+  margin: 1px;
+  flex-basis: 0;
+  flex-grow: 1;
+
+}
+
+.btn-delete {
+  margin: 1px;
+  flex-basis: 0;
+  flex-grow: 1;
+}

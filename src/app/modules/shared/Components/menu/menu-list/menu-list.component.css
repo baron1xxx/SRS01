@@ -1,0 +1,34 @@
+.btn {
+  width: 100%;
+}
+
+.active-link {
+  background-color: blueviolet;
+}
+
+.nav__restaurant_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav__restaurant_item {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+
+
+.list_container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card_item {
+  width: 33%;
+}
+
+.btn {
+  width: 100%;
+}
+

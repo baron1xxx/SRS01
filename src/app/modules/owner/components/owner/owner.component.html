@@ -1,0 +1,19 @@
+<nav class="nav__header">
+  <div class="nav-wrapper #009688 teal">
+    <a class="brand-logo center">{{nawTitle | uppercase}}</a>
+    <ul class="right hide-on-med-and-down">
+      <li (click)="logout()"><a title="Logout"><i class="material-icons">exit_to_app</i></a></li>
+    </ul>
+  </div>
+</nav>
+<nav>
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="hide-on-med-and-down">
+      <li class="naw-item"><a [routerLink]="['restaurants']" [routerLinkActive]="['active-link']">My restaurants</a></li>
+      <li class="naw-item"><a [routerLink]="['statistic']" [routerLinkActive]="['active-link']">Statistic</a></li>
+      <li class="naw-item"><a [routerLink]="['mail']" [routerLinkActive]="['active-link']">Mailbox</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

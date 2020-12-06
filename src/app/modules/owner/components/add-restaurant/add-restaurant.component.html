@@ -1,0 +1,186 @@
+<div class="row">
+  <form class="col s12 registration__form" [formGroup]="addRestaurant"
+        (ngSubmit)="createRestaurant();" enctype="multipart/form-data">
+
+    <div *ngIf="errorMessage" class="collection invalid">
+      {{errorMessage}}
+    </div>
+    <div *ngIf="successMessage" class="collection success">
+      {{successMessage}}
+    </div>
+
+    <div class="input row">
+      <div class="input-field col s12">
+        <input type="text" class="validate" placeholder="Name" formControlName="name">
+
+        <div class="alert alert-danger invalid"
+             *ngIf="addRestaurant.get('name').invalid && addRestaurant.get('name').touched">
+          <div *ngIf="addRestaurant.get('name').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="addRestaurant.get('name').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="addRestaurant.get('name').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="addRestaurant.get('name').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="input row">
+      <div class="input input-field col s12">
+        <input type="text" class="validate" placeholder="Description" formControlName="description">
+
+        <div class="alert alert-danger invalid"
+             *ngIf="addRestaurant.get('description').invalid && addRestaurant.get('description').touched">
+          <div *ngIf="addRestaurant.get('description').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="addRestaurant.get('description').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="addRestaurant.get('description').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="addRestaurant.get('description').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="input row">
+
+      <div class="input input-field col s6">
+        <input type="text" class="validate" placeholder="Tel" formControlName="tel">
+        <div class="alert alert-danger invalid"
+             *ngIf="addRestaurant.get('tel').invalid && addRestaurant.get('tel').touched">
+          <div *ngIf="addRestaurant.get('tel').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="addRestaurant.get('tel').hasError('pattern')">
+            (000)0000000 /
+            000-000-0000 /
+            000 000 0000
+          </div>
+        </div>
+      </div>
+
+      <div class="input input-field input-field-region col s6">
+        <input type="text" class="validate region_input" placeholder="Region" formControlName="region" id="region">
+
+        <div class="collection collection_region" *ngIf="selectedRegion && (regions && regions.length)">
+          <a class="collection-item" *ngFor="let reg of regions" (click)="selectRegion(reg)">{{reg.region}}</a>
+        </div>
+
+        <div class="alert alert-danger invalid"
+             *ngIf="addRestaurant.get('region').invalid && addRestaurant.get('region').touched">
+          <div *ngIf="addRestaurant.get('region').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="addRestaurant.get('region').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="addRestaurant.get('region').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="addRestaurant.get('region').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="input row">
+      <div class="input input-field col s5">
+        <input type="text" class="validate" placeholder="City" formControlName="city">
+
+        <div class="collection collection_region" *ngIf="selectedCity && (cities && cities.length)">
+          <a class="collection-item" *ngFor="let city of cities" (click)="selectCity(city)">{{city.city}}</a>
+        </div>
+
+        <div class="alert alert-danger invalid"
+             *ngIf="addRestaurant.get('city').invalid && addRestaurant.get('city').touched">
+          <div *ngIf="addRestaurant.get('city').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="addRestaurant.get('city').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="addRestaurant.get('city').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="addRestaurant.get('city').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+      </div>
+
+      <div class="input input-field col s5">
+        <input type="text" class="validate" placeholder="Street" formControlName="street">
+        <div class="collection collection_region" *ngIf="selectedStreet && (streets && streets.length)">
+          <a class="collection-item" *ngFor="let street of streets" (click)="selectStreet(street)">{{street.street}}</a>
+        </div>
+        <div class="alert alert-danger invalid"
+             *ngIf="addRestaurant.get('street').invalid && addRestaurant.get('street').touched">
+          <div *ngIf="addRestaurant.get('street').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="addRestaurant.get('street').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="addRestaurant.get('street').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="addRestaurant.get('street').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+      </div>
+
+      <div class="input input-field col s2">
+        <input type="text" class="validate" placeholder="House number" formControlName="houseNumber">
+        <div class="alert alert-danger invalid"
+             *ngIf="addRestaurant.get('houseNumber').invalid && addRestaurant.get('houseNumber').touched">
+          <div *ngIf="addRestaurant.get('houseNumber').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="addRestaurant.get('houseNumber').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="addRestaurant.get('houseNumber').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="addRestaurant.get('houseNumber').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" name="avatar" (change)="UploadFile($event)">
+      </div>
+      <div class="file-path-wrapper">
+        <input *ngIf="selectFile" class="file-path validate" type="text" placeholder="{{selectFile.name}}">
+        <input *ngIf="!selectFile" class="file-path validate" type="text" placeholder="Upload file">
+      </div>
+    </div>
+
+    <div class="btn__auth">
+      <button class="btn waves-effect waves-light" type="submit" name="action" [disabled]="!addRestaurant.valid">ADD
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,60 @@
+.waiter__edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*height: 100%;*/
+}
+
+/* !!!!!!!!!!!!!! Card container!!!!!!!!!!!!!!!!!!!!!!*/
+div .input {
+  margin: 0;
+}
+
+.btn__auth {
+  display: flex;
+  margin-top: 10px;
+}
+
+.invalid {
+  color: red;
+}
+
+.btn-edit {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.btn-cancel {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.edit__form {
+  /*width: 50%;*/
+}
+
+.card__container {
+  flex-basis: 0;
+  flex-grow: 1;
+  position: relative;
+}
+
+.btn__update-avatar {
+  opacity: 0.3;
+  position: absolute;
+  top: 10px;
+}
+
+.card__container:hover .btn__update-avatar {
+  opacity: 1;
+}
+
+.row {
+  flex-basis: 0;
+  flex-grow: 1;
+}

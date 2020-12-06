@@ -1,0 +1,32 @@
+:host {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.invalid {
+  color: red;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.btn__auth {
+  display: flex;
+  margin-top: 10px;
+}
+
+.btn-edit {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.btn-cancel {
+  flex-basis: 0;
+  flex-grow: 1;
+}

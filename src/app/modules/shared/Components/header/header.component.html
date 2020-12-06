@@ -1,0 +1,43 @@
+<div class="nuv__container">
+  <nav>
+    <div class="nav-wrapper">
+      <div class="logo-box">
+        <a class="brand-logo col s4" [routerLink]="['/']">SRS01</a>
+      </div>
+
+      <div class="nav-box">
+        <ul id="nav-mobile" class="right hide-on-med-and-down col s8">
+          <li><a [routerLink]="['']">About</a></li>
+          <li><a [routerLink]="['restaurants']">Restaurants</a></li>
+          <li><a [routerLink]="['contacts']">Contacts</a></li>
+        </ul>
+      </div>
+
+      <div class="auth-box">
+        <a class="waves-effect waves-light btn shopping_cart" [routerLink]="['cart']">
+          <!--          <i class="material-icons left ">shopping_cart-->
+          <!--          </i>{{cart.totalQuantity}} od. {{cart.totalPrice| number: '1.2-2'}} $-->
+          <i class="material-icons left ">shopping_cart
+          </i>2 od. 100.00 $
+        </a>
+
+        <a *ngIf="!userIsAuthenticated" class="waves-effect waves-light btn col s2" [routerLink]="['auth']">Sign up/ Sign
+          in</a>
+<!--        <a *ngIf="userIsAuthenticated" class="waves-effect waves-light btn col s2" (click)="logout()">Logout</a>-->
+
+        <div class="chip"
+             *ngIf="userIsAuthenticated && principal">
+          <div class="avatar-container" (click)="openDwsList()">
+            <img *ngIf="principal" src="{{avatarImagePath}}/{{principal.id}}/{{principal.avatar}}">
+            {{principal.firstName}} {{principal.lastName}} {{principal.role}}
+          </div>
+
+          <div class="collection dws" [ngClass]="closeDws">
+            <a class="collection-item"(click)="closeDwsList()">My account</a>
+            <a class="collection-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

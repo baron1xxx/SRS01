@@ -1,0 +1,14 @@
+<div class="add__restaurant-btn">
+  <a class="waves-effect waves-light btn" (click)="addRestaurantClicked()">
+    <i class="material-icons right" *ngIf="!addRestaurantIsClicked">expand_more</i>
+    <i class="material-icons right" *ngIf="addRestaurantIsClicked">expand_less</i>
+    ADD RESTAURANT</a>
+</div>
+<app-add-restaurant *ngIf="addRestaurantIsClicked"></app-add-restaurant>
+<div class="list_container" *ngIf="restaurants && geoLocation">
+  <app-restaurant-card-item class="card_item"
+                            *ngFor="let restaurant of restaurants" [restaurant]="restaurant"
+                            [currentPosition]="geoLocation"
+                            [avatarHost]="avatarHost">
+  </app-restaurant-card-item>
+</div>

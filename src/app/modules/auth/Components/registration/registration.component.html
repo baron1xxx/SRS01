@@ -1,0 +1,106 @@
+<div class="row">
+  <form class="col s12 registration__form" [formGroup]="registrationForm" (ngSubmit)="registration();">
+
+    <div *ngIf="errorMessage" class="collection invalid">
+      {{errorMessage}}
+    </div>
+    <div *ngIf="successMessage" class="collection success">
+      {{successMessage}}
+    </div>
+
+    <div class="input row">
+      <div class="input-field col s12">
+        <input type="text" class="validate" placeholder="First Name" formControlName="firstName">
+
+        <div class="alert alert-danger invalid"
+             *ngIf="registrationForm.get('firstName').invalid && registrationForm.get('firstName').touched">
+          <div *ngIf="registrationForm.get('firstName').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="registrationForm.get('firstName').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="registrationForm.get('firstName').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="registrationForm.get('firstName').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="input row">
+      <div class="input input-field col s12">
+        <input type="text" class="validate register__input" placeholder="Last Name" formControlName="lastName">
+        <div class="alert alert-danger invalid"
+             *ngIf="registrationForm.get('lastName').invalid && registrationForm.get('lastName').touched">
+          <div *ngIf="registrationForm.get('lastName').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="registrationForm.get('lastName').hasError('minlength')">
+            Min 3 character!
+          </div>
+          <div *ngIf="registrationForm.get('lastName').hasError('maxlength')">
+            Max 20 character!
+          </div>
+          <div *ngIf="registrationForm.get('lastName').hasError('pattern')">
+            Only letters and space!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input row">
+      <div class="input input-field col s12">
+        <input type="email" class="validate register__input" placeholder="Email" formControlName="email">
+        <div class="alert alert-danger invalid"
+             *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').touched">
+          <div *ngIf="registrationForm.get('email').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="registrationForm.get('email').hasError('pattern')">
+            Does not match Email template!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input row">
+      <div class="input input-field col s12">
+        <input type="password" class="validate" placeholder="Password" formControlName="permissionCode">
+        <div class="alert alert-danger invalid"
+             *ngIf="registrationForm.get('permissionCode').invalid && registrationForm.get('permissionCode').touched">
+          <div *ngIf="registrationForm.get('permissionCode').hasError('required')">
+            Field required!
+          </div>
+          <div *ngIf="registrationForm.get('permissionCode').hasError('pattern')">
+            At least one capital English letter!
+            At least one lowercase english letter!
+            At least one digit!
+            At least one special character!
+            At least 8 in length!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      <input type="checkbox" id="test" formControlName="role"/>
+      <label for="test">As a restaurant owner</label>
+    </p>
+
+    <div class="btn__auth">
+      <button class="btn waves-effect waves-light" type="submit" name="action" [disabled]="!registrationForm.valid">Register
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+
+  <div class="auth__button-social">
+    <a class="waves-effect waves-light btn auth__social__button-link #ff5252 red accent-2"
+       (click)="signInWithGoogle()">Sign in with Google</a>
+    <a class="waves-effect waves-light btn auth__social__button-link #0d47a1 blue darken-4">Sign in with Facebook</a>
+  </div>
+</div>

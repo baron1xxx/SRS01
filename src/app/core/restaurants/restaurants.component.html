@@ -1,0 +1,7 @@
+<div class="list_container" *ngIf="restaurants && geoLocation">
+  <app-restaurant-card-item class="card_item"
+                            *ngFor="let restaurant of restaurants" [restaurant]="restaurant"
+                            [currentPosition]="geoLocation"
+                            [avatarHost]="avatarHost">
+  </app-restaurant-card-item>
+</div>

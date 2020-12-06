@@ -1,0 +1,22 @@
+
+.btn {
+  width: 100%;
+}
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.auth__button-social {
+  padding: 10px;
+}
+
+.auth__social__button-link {
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+
+.invalid {
+  color: red;
+}

@@ -1,0 +1,22 @@
+<div class="card__container">
+  <div class="card__box" [routerLink]="[menu.id]">
+    <div class="card">
+      <div class="card-image">
+        <img class="img__avatar" src="{{avatarHost}}/{{menu.restaurantId}}/menu/{{menu.id}}/{{menu.avatar}}">
+      </div>
+      <h2 class="card-title">{{menu.name}}</h2>
+<!--      <div class="info">-->
+<!--        <star-rating class="star-rating" value="4.5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false"></star-rating>-->
+<!--        <div class="distance">-->
+<!--          <i class="material-icons">place</i>{{distance | async}}-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+  </div>
+  <div class="edit-delete"
+       *ngIf="authLocalService.getIsAuthenticated() &&
+       [authLocalService.roles.ADMIN, authLocalService.roles.OWNER].includes(authLocalService.getPrincipal().role)">
+    <a class="waves-effect waves-light btn btn-edit green accent-4" [routerLink]="[menu.id]"><i class="material-icons right">edit</i>Edit</a>
+    <a class="waves-effect waves-light btn btn-delete red darken-3 " (click)="deleteMenu(menu.id)"><i class="material-icons right">delete</i>Delete</a>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="row">
+  <form class="col s12 login__form" [formGroup]="loginForm">
+    <div *ngIf="errorMessage" class="collection invalid">
+      {{errorMessage}}
+    </div>
+
+    <div class="input row">
+      <div class="input-field col s12">
+        <input type="email" name="email" class="validate" placeholder="Email" formControlName="email">
+      </div>
+    </div>
+    <div class="input row">
+      <div class="input input-field col s12">
+        <input type="password" name="password" class="validate" placeholder="Password" formControlName="permissionCode">
+      </div>
+    </div>
+
+    <p class="forgot">
+      <a routerLink="" class="forgot_link">Forgot password?</a>
+    </p>
+
+    <div class="btn__auth">
+      <button class="btn waves-effect waves-light" type="submit" name="action" (click)="login()">Login</button>
+    </div>
+  </form>
+
+  <div class="auth__button-social">
+    <a class="waves-effect waves-light btn auth__social__button-link #ff5252 red accent-2"
+       (click)="signInWithGoogle()">Sign in with Google</a>
+    <a class="waves-effect waves-light btn auth__social__button-link #0d47a1 blue darken-4"
+       (click)="signInWithFB()">Sign in with Facebook</a>
+<!--    <a class="waves-effect waves-light btn auth__social__button-link #0d47a1 blue darken-4"-->
+<!--       (click)="getUser()">Get USER</a>-->
+<!--    <a class="waves-effect waves-light btn auth__social__button-link #0d47a1 blue darken-4"-->
+<!--       (click)="logoutGoogle()">Logout</a>-->
+  </div>
+
+
+</div>

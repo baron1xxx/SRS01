@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="auth">
+    <div class="auth__button">
+      <a [routerLink]="['registration']" [routerLinkActive]="['is-active']" class="waves-effect waves-light btn auth__button-link">Register</a>
+      <a [routerLink]="['login']" [routerLinkActive]="['is-active']" class="waves-effect waves-light btn auth__button-link">Login</a>
+    </div>
+    <div class="form__container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

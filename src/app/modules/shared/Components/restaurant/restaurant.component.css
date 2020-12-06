@@ -1,0 +1,33 @@
+.row {
+  margin-bottom: 0;
+}
+.avatar {
+  height: 350px;
+}
+
+.description {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+.name {
+  text-align: center;
+}
+
+.nav__restaurant_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav__restaurant_item {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.active-link {
+  background-color: #26a69a;
+}

@@ -1,0 +1,31 @@
+<div class="info-container" *ngIf="restaurant">
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>{{restaurant.name}}</h4></li>
+    <li class="collection-item">
+      {{restaurant.address.city.city}}
+      {{restaurant.address.street.street}}
+      {{restaurant.address.houseNumber.houseNumber}}
+    </li>
+    <li class="collection-item">Tel. {{restaurant.tel}}</li>
+  </ul>
+
+  <agm-map
+    [latitude]="latitude"
+    [longitude]="longitude"
+    [zoom]=18>
+    <agm-marker
+      [latitude]="latitude"
+      [longitude]="longitude"
+      [label]="markerLabel"
+    ></agm-marker>
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+
+    <agm-circle [latitude]="latitude" [longitude]="longitude"
+                [radius]="10"
+                [fillColor]="'red'">
+    </agm-circle>
+  </agm-map>
+</div>
+

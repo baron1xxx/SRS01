@@ -1,0 +1,27 @@
+<div *ngIf="errorMessage" class="collection invalid">
+  {{errorMessage}}
+</div>
+<div class="container">
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <input type="file" name="avatar" (change)="UploadFile($event)">
+    </div>
+    <div class="file-path-wrapper">
+      <input *ngIf="selectFile" class="file-path validate" type="text" placeholder="{{selectFile.name}}">
+      <input *ngIf="!selectFile" class="file-path validate" type="text" placeholder="Upload file">
+    </div>
+  </div>
+
+  <div class="btn__auth">
+    <button class="btn waves-effect waves-light btn-edit" type="submit" name="action"
+            [disabled]="!selectFile" (click)="updateAvatar()">Update avatar
+      <i class="material-icons right">update</i>
+    </button>
+    <button class="btn waves-effect waves-light red darken-3 btn-cancel" type="submit" name="action"
+            (click)="closeModal()">Cancel
+      <i class="material-icons right">cancel</i>
+    </button>
+  </div>
+
+</div>

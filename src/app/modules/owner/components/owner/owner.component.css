@@ -1,0 +1,17 @@
+
+.hide-on-med-and-down {
+  display: flex;
+  justify-content: space-around;
+}
+
+.naw-item {
+  width: 100%;
+  align-items: center;
+}
+.naw-item>a {
+  text-align: center;
+}
+
+.active-link {
+  background-color: #757575;
+}

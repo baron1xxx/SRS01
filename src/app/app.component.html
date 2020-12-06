@@ -1,0 +1,12 @@
+<div class="container">
+  <app-header *ngIf="!authLocalService.getIsAuthenticated()
+  || [authLocalService.roles.CUSTOMER].includes(authLocalService.getPrincipal()?.role)"></app-header>
+<!--  <app-header></app-header>-->
+  <router-outlet></router-outlet>
+  <app-footer
+    *ngIf="!authLocalService.getIsAuthenticated()
+    || [authLocalService.roles.CUSTOMER].includes(authLocalService.getPrincipal()?.role)"></app-footer>
+<!--  <app-footer></app-footer>-->
+</div>
+
+

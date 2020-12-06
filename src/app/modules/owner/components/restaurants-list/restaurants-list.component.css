@@ -1,0 +1,14 @@
+
+
+.list_container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card_item {
+  width: 33%;
+}
+
+.btn {
+  width: 100%;
+}

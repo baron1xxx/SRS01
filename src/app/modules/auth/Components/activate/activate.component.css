@@ -1,0 +1,19 @@
+.btn {
+  width: 100%;
+}
+.response__message {
+  text-align: center;
+}
+
+.invalid {
+  color: red;
+  background-color: lightpink;
+  border-radius: 5px;
+
+}
+
+.success {
+  color: darkgreen;
+  background-color: lawngreen;
+  border-radius: 5px;
+}

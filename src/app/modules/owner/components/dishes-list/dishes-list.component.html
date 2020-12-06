@@ -1,0 +1,8 @@
+<ul *ngIf="dishes">
+  <li *ngFor="let dish of dishes">
+    <h4>{{dish.name}}</h4>
+    <h4>{{dish.description}}</h4>
+    <h4>{{dish.price}}</h4>
+    <hr>
+  </li>
+</ul>
